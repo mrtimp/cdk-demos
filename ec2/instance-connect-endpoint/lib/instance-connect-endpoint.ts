@@ -46,10 +46,11 @@ export class InstanceConnectEndpoint extends cdk.Stack {
                 physicalResourceId: cr.PhysicalResourceId.fromResponse('InstanceConnectEndpoint.InstanceConnectEndpointId')
             },
             onUpdate: {
-                // null update to ensure that updates to the
-                // custom resource do not fail
-                service: 'STS',
-                action: 'getCallerIdentity',
+                service: 'EC2',
+                action: 'describeInstanceConnectEndpoints',
+                parameters: {
+                    InstanceConnectEndpointId: new cr.PhysicalResourceIdReference(),
+                },
             },
             onDelete: {
                 service: 'EC2',
@@ -58,7 +59,6 @@ export class InstanceConnectEndpoint extends cdk.Stack {
                     InstanceConnectEndpointId: new cr.PhysicalResourceIdReference(),
                 },
             },
-            // https://github.com/aws/aws-cdk/issues/13601?ref=blog.purple-technology.com
             policy: cr.AwsCustomResourcePolicy.fromStatements([
                 new iam.PolicyStatement({
                     effect: iam.Effect.ALLOW,
