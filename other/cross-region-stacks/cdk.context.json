@@ -1,0 +1,10 @@
+{
+  "hosted-zone:account=421803288273:domainName=containerd.host:region=us-east-1": {
+    "Id": "/hostedzone/Z088794947FNFCN4UU0I",
+    "Name": "containerd.host."
+  },
+  "hosted-zone:account=421803288273:domainName=containerd.host:region=ap-southeast-2": {
+    "Id": "/hostedzone/Z088794947FNFCN4UU0I",
+    "Name": "containerd.host."
+  }
+}

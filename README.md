@@ -12,6 +12,10 @@ The following are a collection of demos using CDK for various different stacks.
 
 * [EC2 Instance Connect Endpoint](/ec2/instance-connect-endpoint/)
 
+## Other
+
+* [Cross region stacks](/other/cross-region-stacks)
+
 ## Serverless
 
 The Serverless demos are more a combination of AWS's serverless resources coupled to build a pattern or solution.
